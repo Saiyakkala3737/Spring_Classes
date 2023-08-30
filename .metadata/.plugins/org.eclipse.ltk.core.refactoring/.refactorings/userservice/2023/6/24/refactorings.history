@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.training.userservice.Exceptions.UserServiceException.java&apos; to &apos;UserNotFoundException.java&apos;&#x0D;&#x0A;- Original project: &apos;userservice&apos;&#x0D;&#x0A;- Original element: &apos;com.training.userservice.Exceptions.UserServiceException.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.training.userservice.Exceptions.UserNotFoundException.java&apos;" description="Rename compilation unit &apos;UserServiceException.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.training.userservice.Exceptions{UserServiceException.java" name="UserNotFoundException.java" references="false" stamp="1686543614718" version="1.0"/>
+</session>

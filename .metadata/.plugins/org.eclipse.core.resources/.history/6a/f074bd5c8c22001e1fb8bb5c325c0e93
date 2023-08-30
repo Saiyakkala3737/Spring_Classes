@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<center>
+			<h1>WELCOME TO SPRING SECURITY - welcome  [[${#httpServletRequest.remoteUser}]] !!!</h1>
+			<form action="@{/logout}" method="post">
+				<input type="submit" value="LOGOUT">				
+			</form>
+		</center>
+	</body>
+</html>

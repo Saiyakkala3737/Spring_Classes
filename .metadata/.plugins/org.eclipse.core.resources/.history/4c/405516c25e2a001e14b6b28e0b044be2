@@ -1,0 +1,18 @@
+package in.ashokit.java8;
+
+public class User {
+
+	public String getUsernameById(Integer id) {
+
+		if (id == 100) {
+			return "Raju";
+		} else if (id == 101) {
+			return "Rani";
+		} else if (id == 102) {
+			return "john";
+		} else {
+			return null;
+		}
+	}
+
+}

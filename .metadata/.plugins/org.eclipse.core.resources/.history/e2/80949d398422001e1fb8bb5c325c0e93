@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SPRING SECURITY CUSTOM LOGIN FORM</title>
+	</head>
+	<body>
+		<center>
+			<h1>SPRING SECURITY CUSTOM LOGIN FORM</h1>
+			<div th:if="${Param.error}">
+				login Failed check username/password
+			</div>
+			<form action="@{/login}" method="post">
+				Username<input type="text" name="username">
+				</br>
+				Password<input type="password" name="password">
+				</br>
+				<input type="submit">"
+			</form>
+		</center>
+	</body>
+</html>

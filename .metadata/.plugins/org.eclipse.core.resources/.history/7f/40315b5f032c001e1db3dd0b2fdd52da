@@ -1,0 +1,14 @@
+package in.ashokit.streams;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class ThirdDemo {
+	
+	List<String> names= Arrays.asList("john","Anushka","Robert","Anupama","Smith","Ashok");
+	
+	names.stream().filter(i ->i.startsWith("A")).foreach(i -> System.out.println(i));
+	
+
+}

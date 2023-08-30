@@ -1,0 +1,14 @@
+package com.training.demoservice.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class democontroller {
+	
+	
+	public String greet() {
+		return "Hellp There!!";
+		
+	}
+
+}

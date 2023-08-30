@@ -1,0 +1,13 @@
+package in.ashokit.java8;
+import java.util.StringJoiner;
+
+public class StringJoinerDemo {
+
+	public static void main(String[] args)
+	{
+		StringJoiner sj1 = new StringJoiner("-");
+		sj1.add("sai");
+		sj1.add("kumar");
+		System.out.println(sj1);
+	}
+}

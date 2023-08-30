@@ -1,0 +1,74 @@
+package com.training.userservice.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.training.userservice.model.User;
+import com.training.userservice.service.UserService;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	UserService service;
+
+	// @RequestMapping("/Users")
+	@GetMapping("/Users")
+	public ResponseEntity<ArrayList<User>> getusers() {
+		return new ResponseEntity<ArrayList<User>>(service.getusers(), HttpStatus.OK);
+	}
+
+	// @RequestMapping("/user/")
+	@GetMapping("/user/{uid}")
+	public ResponseEntity<User> getUserId(@PathVariable int uid) {
+		return new ResponseEntity<User>(service.getUserId(uid), HttpStatus.OK);
+	}
+
+	// @RequestMapping("/username/{name}")
+	@GetMapping("/username/{name}")
+	public ResponseEntity<User> getName(@PathVariable String name) {
+		return new ResponseEntity<User>(service.getname(name), HttpStatus.OK);
+	}
+	
+	@GetMapping("/address/{addr}")
+	public ResponseEntity<ArrayList<User>> getaddr(@PathVariable String addr) {
+		return new ResponseEntity<ArrayList<User>>(service.getaddr(addr), HttpStatus.OK);
+		
+	}
+	
+	
+	@GetMapping("/useraddr/{name}/{addr}")
+	public ResponseEntity<User> getUserAddress(@PathVariable String name, @PathVariable String addr) {
+		return new ResponseEntity<User>(service.getUserAddress(name, addr), HttpStatus.OK);
+	}
+
+	// @RequestMapping(value = "/insert", method = RequestMethod.POST)
+	@PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<User> insertUser(@RequestBody User usr) {
+		return new ResponseEntity<User>(service.insertUser(usr), HttpStatus.CREATED);
+	}
+
+	// @RequestMapping(value = "/update/{uid}", method = RequestMethod.PUT)
+	@PutMapping("/update/{uid}")
+	public ResponseEntity<User> UpdateUser(@PathVariable int uid, @RequestBody User usr) {
+		return new ResponseEntity<User>(service.UpdateUser(uid, usr), HttpStatus.CREATED);
+	}
+
+	// @RequestMapping(value = "/delete/{uid}", method = RequestMethod.DELETE)
+	@DeleteMapping("/delete/{uid}")
+	public ResponseEntity<User> DeleteUser(@PathVariable int uid) {
+		return new ResponseEntity<User>(HttpStatus.ACCEPTED);
+	}
+
+}

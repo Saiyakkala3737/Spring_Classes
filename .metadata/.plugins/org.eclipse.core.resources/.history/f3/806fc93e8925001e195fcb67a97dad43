@@ -1,0 +1,16 @@
+package in.ashokit.java8;
+
+class Person{
+	String name;
+	int age;
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+}
+
+public class PredicateDemo3 {
+
+}

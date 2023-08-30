@@ -1,0 +1,36 @@
+package com.example.UsersService.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.UsersService.model.User;
+import com.example.UsersService.repository.userRepository;
+
+import antlr.collections.List;
+
+@RestController
+public class userController {
+	
+	@Autowired
+	userRepository repo;
+	
+	@GetMapping(value = "/greet")
+	public String getDemo() {
+		return "Hello i'm working!!!!";
+	}
+	
+	@GetMapping("/users") 
+		public ArrayList<User> getAllUsers(){
+			return (ArrayList<User>) repo.findAll();
+	}
+	
+	@PostMapping("/save")
+	public User insertUser(User urs) {
+		return repo.save(urs);
+	}
+}

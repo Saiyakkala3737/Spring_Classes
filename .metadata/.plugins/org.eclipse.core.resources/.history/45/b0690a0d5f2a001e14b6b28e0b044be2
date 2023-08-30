@@ -1,0 +1,20 @@
+package in.ashokit.java8;
+
+import java.util.Optional;
+
+public class User {
+
+	public Optional<String> getUsernameById(Integer id) {
+
+		if (id == 100) {
+			return Optional.ofNullable("Raju");
+		} else if (id == 101) {
+			return "Rani";
+		} else if (id == 102) {
+			return "john";
+		} else {
+			return null;
+		}
+	}
+
+}

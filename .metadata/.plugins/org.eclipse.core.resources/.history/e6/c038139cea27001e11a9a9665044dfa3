@@ -1,0 +1,9 @@
+package in.ashokit.java8;
+
+public class StringJoinerDemo {
+
+	public static void main(String[] args)
+	{
+		StringJoiner sj1 = new StringJoiner("-");
+	}
+}
